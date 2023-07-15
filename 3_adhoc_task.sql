@@ -44,7 +44,7 @@ select *from sales_order_info
 select substring(product_id,5,15) as product_id from sales_order_info 
 
 --------5 b‎) per_quantity_price should be  output of Sales / Quantity of each customer records‎-------
-‎select * from sales_order_info
+‎select  per_quantity_price from sales_order_info ;
  
 --------5 c)sales_type should be 3 categories ‎---------
 select 
@@ -65,6 +65,8 @@ case
    loss
 from sales_order_info;
 select * from sales_order_info
+
+ 
 ---------5 d) Loss will be 1 if profit is negative----------
 select 
 product_id,
@@ -105,6 +107,8 @@ select min(order_date)from sales_purchase_data_updated
 -------11.Customer info of all the columns for the maximum order date----------
 select *from sales_purchase_data_updated
 where order_date = (select max(order_date) from sales_purchase_data_updated);
+
+
 -------12. No .of Unique Customers from Texas and New york-----------
 SELECT
     COUNT(DISTINCT CASE WHEN State = 'Texas' THEN Customer_ID END) AS no_of_customer_texas,
